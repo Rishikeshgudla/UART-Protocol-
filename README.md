@@ -79,13 +79,16 @@ UART/
 ├── UART_top_tb.vhd     # Testbench
 │
 └── README.md
-
 ````
+
+<img width="303" height="376" alt="Screenshot 2026-06-04 212659" src="https://github.com/user-attachments/assets/a44e33db-6937-406d-9443-cf10e262259c" />
+
 # Simulation Verification
 
 Verified successfully in Vivado Behavioral Simulation.
 
 ### Observed:
+
 - Transmitted bytes are correctly received
 - `data_in == data_out`
 - `busy` asserted during transmission
@@ -94,7 +97,7 @@ Verified successfully in Vivado Behavioral Simulation.
 ---
 
 # Tools Used
-- Verilog HDL
+- VHDL
 - Xilinx Vivado Simulator
 
 ---
@@ -108,5 +111,13 @@ UART transmitter and receiver were successfully designed and verified through si
 
 ---
 
+
 ## Author
-**Lakshmi Bhavani Katta**
+
+**Rishikesh Gudla**
+
+---
+
+## License
+
+This project is released for educational and research purposes. Feel free to use and modify the design for learning and experimentation.
