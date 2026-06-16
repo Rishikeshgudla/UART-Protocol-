@@ -21,6 +21,7 @@ This project implements a complete **UART (Universal Asynchronous Receiver Trans
 UART is one of the most widely used serial communication protocols for transmitting and receiving data between digital systems.
 
 This design includes:
+
 ✅ UART Transmitter (9600 baud) 
 
 ✅ UART Receiver (9600 baud)
