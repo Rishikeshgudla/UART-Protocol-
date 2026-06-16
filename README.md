@@ -1,12 +1,12 @@
-<h1 align="center">📡 UART RTL Design in Verilog</h1>
+<h1 align="center">📡 UART RTL Design in VHDL</h1>
 
 <h3 align="center">
 Universal Asynchronous Receiver Transmitter (UART) <br>
-Designed & Verified using Verilog HDL and Vivado
+Designed & Verified using VHDL and Vivado
 </h3>
 
 <p align="center">
-<img src="https://img.shields.io/badge/Language-Verilog-blue.svg"/>
+<img src="https://img.shields.io/badge/Language-VHDL-blue.svg"/>
 <img src="https://img.shields.io/badge/Tool-Xilinx%20Vivado-green.svg"/>
 <img src="https://img.shields.io/badge/Simulation-Passed-success.svg"/>
 <img src="https://img.shields.io/badge/RTL-UART-orange.svg"/>
@@ -16,18 +16,20 @@ Designed & Verified using Verilog HDL and Vivado
 
 ## 🚀 Project Overview
 
-This project implements a complete **UART (Universal Asynchronous Receiver Transmitter)** protocol in **Verilog HDL**.
+This project implements a complete **UART (Universal Asynchronous Receiver Transmitter)** protocol in **VHDL**.
 
 UART is one of the most widely used serial communication protocols for transmitting and receiving data between digital systems.
 
 This design includes:
-
-✅ UART Transmitter (TX)  
-✅ UART Receiver (RX)  
-✅ Baud Rate Generator  
-✅ Top-Level Integration  
-✅ Testbench Verification  
-✅ Functional Simulation in Vivado  
+✅ UART Transmitter (9600 baud)
+✅ UART Receiver (9600 baud)
+✅ Top-level integration
+✅ Testbench verification
+✅ Loopback communication (TX → RX)
+✅ Data transmission (01100001)
+✅ Adjustable delay (100 ms → 1 ms)
+✅ Simulation waveform analysis
+✅ State-machine flowchart with legends 
 
 ---
 
@@ -36,7 +38,8 @@ This design includes:
 The following flowchart illustrates the UART TX and RX FSM operation along with UART frame format.
 
 <p align="center">
-  <img width="500" height="750" alt="uart" src="https://github.com/user-attachments/assets/80b3f930-45c0-4e38-987c-1d1804036c31" />
+<img width="1536" height="1024" alt="UART flowchart" src="https://github.com/user-attachments/assets/2f059d1f-ade1-47b4-baf2-9850a710bc2b" />
+
 
 </p>
 
@@ -47,41 +50,33 @@ The following flowchart illustrates the UART TX and RX FSM operation along with 
 
 Shows UART transmission and reception of multiple data bytes.
 
-<img width="1631" height="630" alt="Scope" src="https://github.com/user-attachments/assets/933bc222-06c8-440f-a3da-3081633a3854" />
-
+<img width="1891" height="526" alt="Screenshot 2026-06-16 212109" src="https://github.com/user-attachments/assets/444951e6-21fe-41d6-af9a-a3aa83b0ba54" />
 
 ---
 
 ## Console Output
 
 Verification from testbench showing transmitted data equals received data.
-<img width="572" height="237" alt="Console" src="https://github.com/user-attachments/assets/2e0a67af-febd-4c93-ac75-e714e89a8ea3" />
+
+<img width="1217" height="280" alt="Screenshot 2026-06-16 211929" src="https://github.com/user-attachments/assets/598a4325-3520-4387-b7e4-70f794989555" />
 
 Example:
 ```text
-sent = 42   received = 42
-sent = 43   received = 43
-sent = 44   received = 44
-sent = 45   received = 45
-sent = 46   received = 46
+sent = 97   received = 97  Status: PASS : Correct Data Received (01100001)
+sent = 97   received = 97  Status: PASS : Correct Data Received (01100001)
+sent = 97   received = 97  Status: PASS : Correct Data Received (01100001)
+sent = 97   received = 97  Status: PASS : Correct Data Received (01100001)
 ```
-
 
 # ⚙️ Project Files
 ---
 ```bash
 UART/
 │
-├── UART_top.v        # Top module
-├── UART_Tx.v         # UART transmitter
-├── UART_Rx.v         # UART receiver
-├── baud_gen.v        # Baud rate generator
-├── UART_top_tb.v     # Testbench
-│
-├── images/
-│   ├── uart.png
-│   ├── Scope.png
-│   └── Console.png
+├── UART_top.vhd        # Top module
+├── UART_Tx.vhd         # UART transmitter
+├── UART_Rx.vhd         # UART receiver
+├── UART_top_tb.vhd     # Testbench
 │
 └── README.md
 
